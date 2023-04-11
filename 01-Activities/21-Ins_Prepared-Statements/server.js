@@ -1,6 +1,6 @@
-const express = require('express');
+const express = require("express");
 // Import and require mysql2
-const mysql = require('mysql2');
+const mysql = require("mysql2");
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -12,12 +12,12 @@ app.use(express.json());
 // Connect to database
 const db = mysql.createConnection(
   {
-    host: 'localhost',
+    host: "localhost",
     // MySQL username,
-    user: 'root',
+    user: "root",
     // MySQL password
-    password: '',
-    database: 'courses_db'
+    password: "12345",
+    database: "courses_db",
   },
   console.log(`Connected to the courses_db database.`)
 );
@@ -32,7 +32,7 @@ db.query(`DELETE FROM course_names WHERE id = ?`, 3, (err, result) => {
 });
 
 // Query database
-db.query('SELECT * FROM course_names', function (err, results) {
+db.query("SELECT * FROM course_names", function (err, results) {
   console.log(results);
 });
 
